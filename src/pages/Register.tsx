@@ -68,6 +68,11 @@ export const Register = () => {
     
     setIsLoading(true);
 
+    if (!import.meta.env.VITE_API_URL) {
+      handleDemoModeFallback();
+      return;
+    }
+
     try {
       // Register
       await api.post('/auth/register', { name, email, password });

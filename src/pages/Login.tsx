@@ -44,6 +44,11 @@ export const Login = () => {
     setError('');
     setIsLoading(true);
 
+    if (!import.meta.env.VITE_API_URL) {
+      handleDemoModeFallback();
+      return;
+    }
+
     try {
       const formData = new URLSearchParams();
       formData.append('username', email); // OAuth2 expects 'username'
