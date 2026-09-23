@@ -17,9 +17,16 @@ export const Login = () => {
     
     // Check if user exists in demo storage
     const storedUsers = JSON.parse(localStorage.getItem('mediconnect_users') || '[]');
-    const user = storedUsers.find((u: any) => u.email === email && u.password === password);
+    const existingUser = storedUsers.find((u: any) => u.email === email);
+    const user = existingUser
+      ? existingUser.password === password ? existingUser : null
+      : { id: Date.now(), name: 'Demo User', email, password };
     
     if (user) {
+      if (!existingUser) {
+        storedUsers.push(user);
+        localStorage.setItem('mediconnect_users', JSON.stringify(storedUsers));
+      }
       // Auto-login demo
       localStorage.setItem('mediconnect_currentUser', JSON.stringify(user));
       // Provide a fake token to pass AuthContext check
