@@ -1,0 +1,422 @@
+export const demoHospitals = [
+  {
+    id: 1,
+    name: "Tata Memorial Hospital",
+    lat: 19.0044,
+    lon: 72.8426,
+    distance_km: 1120.4,
+    specialties: [{specialty_name: "Oncology"}, {specialty_name: "Cancer Surgery"}, {specialty_name: "Radiation Therapy"}],
+    facilities: [{facility_name: "ICU"}, {facility_name: "PET-CT Scan"}, {facility_name: "24/7 ER"}],
+    rating: 4.9,
+    isVerified: true,
+    best_for: "All types of Cancer and Advanced Oncology Research",
+    costs: [{currency: "INR", cost_min: 50000, cost_max: 800000, treatment: "Cancer Treatment"}],
+    patient_stats: [{volume: 75000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Homi_Bhabha_Block_at_Tata_Memorial_Hospital_Mumbai.jpg/800px-Homi_Bhabha_Block_at_Tata_Memorial_Hospital_Mumbai.jpg",
+    contact: {
+      phone: "+91-22-24177000",
+      website: "tmc.gov.in"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-TMH-2023-0941"
+  },
+  {
+    id: 2,
+    name: "AIIMS New Delhi",
+    lat: 28.5659,
+    lon: 77.2111,
+    distance_km: 250.2,
+    specialties: [{specialty_name: "Cardiology"}, {specialty_name: "Neurology"}, {specialty_name: "Oncology"}, {specialty_name: "Cancer"}, {specialty_name: "Multi-specialty"}],
+    facilities: [{facility_name: "ICU"}, {facility_name: "Advanced MRI"}, {facility_name: "Trauma Center"}],
+    rating: 4.8,
+    isVerified: true,
+    best_for: "Complex Surgeries, Cancer, and Rare Diseases",
+    costs: [{currency: "INR", cost_min: 5000, cost_max: 100000, treatment: "Various Treatments"}],
+    patient_stats: [{volume: 150000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/AIIMS_-New_Delhi%27s_Ward_Block.jpg/800px-AIIMS_-New_Delhi%27s_Ward_Block.jpg",
+    contact: {
+      phone: "+91-11-26588500",
+      website: "aiims.edu"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-AIIMS-2021-0001"
+  },
+  {
+    id: 3,
+    name: "Apollo Proton Cancer Centre",
+    lat: 12.9121,
+    lon: 80.2301,
+    distance_km: 2100.5,
+    specialties: [{specialty_name: "Proton Therapy"}, {specialty_name: "Oncology"}, {specialty_name: "Cancer"}, {specialty_name: "Multi-specialty"}],
+    facilities: [{facility_name: "Proton Therapy Unit"}, {facility_name: "Robotic Surgery"}],
+    rating: 4.7,
+    isVerified: true,
+    best_for: "Advanced Proton Beam Therapy and Cancer Treatment",
+    costs: [{currency: "INR", cost_min: 300000, cost_max: 2000000, treatment: "Proton Therapy"}],
+    patient_stats: [{volume: 12000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Apollo_Proton_Cancer_Centre%2C_Chennai.jpg/800px-Apollo_Proton_Cancer_Centre%2C_Chennai.jpg",
+    contact: {
+      phone: "+91-44-61011696",
+      website: "proton.apollohospitals.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-JCI-APCC-012"
+  },
+  {
+    id: 4,
+    name: "City Care Hospital",
+    lat: 30.7333,
+    lon: 76.7794,
+    distance_km: 2.4,
+    specialties: [{specialty_name: "Nephrology"}, {specialty_name: "Cardiology"}, {specialty_name: "General Medicine"}],
+    facilities: [{facility_name: "ICU"}, {facility_name: "24/7 ER"}],
+    rating: 4.5,
+    isVerified: true,
+    best_for: "Severe Cardiovascular Conditions",
+    costs: [{currency: "INR", cost_min: 150000, cost_max: 300000, treatment: "Surgery"}],
+    patient_stats: [{volume: 12450, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pgimer.jpg/800px-Pgimer.jpg",
+    contact: {
+      phone: "+91-172-2746018",
+      website: "pgimer.edu.in"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-PGIMER-0182"
+  },
+  {
+    id: 5,
+    name: "Metro Health Institute",
+    lat: 30.7433,
+    lon: 76.7894,
+    distance_km: 5.1,
+    specialties: [{specialty_name: "Orthopedics"}, {specialty_name: "Neurology"}, {specialty_name: "Bone"}],
+    facilities: [{facility_name: "ICU"}, {facility_name: "MRI"}],
+    rating: 4.2,
+    isVerified: true,
+    best_for: "Complex Orthopedic Surgeries, Bone Fractures",
+    costs: [{currency: "INR", cost_min: 80000, cost_max: 200000, treatment: "Knee Replacement"}],
+    patient_stats: [{volume: 9800, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Fortis_Hospital%2C_Mohali.jpg/800px-Fortis_Hospital%2C_Mohali.jpg",
+    contact: {
+      phone: "+91-172-4692222",
+      website: "fortishealthcare.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-FHM-0012"
+  },
+  {
+    id: 6,
+    name: "Life Line Clinic",
+    lat: 30.7233,
+    lon: 76.7694,
+    distance_km: 1.2,
+    specialties: [{specialty_name: "Pediatrics"}, {specialty_name: "General Medicine"}, {specialty_name: "Fever"}],
+    facilities: [{facility_name: "Pharmacy"}],
+    rating: 3.8,
+    isVerified: false,
+    best_for: "General Checkups, Fever & Pediatrics",
+    costs: [{currency: "INR", cost_min: 1000, cost_max: 5000, treatment: "Consultation"}],
+    patient_stats: [{volume: 4500, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Primary_Health_Centre%2C_Saligramam%2C_Chennai.jpg/800px-Primary_Health_Centre%2C_Saligramam%2C_Chennai.jpg",
+    contact: {
+      phone: "+91-172-4001122",
+      website: "lifelinechd.in"
+    },
+    nabh_accredited: false,
+    nabh_cert_no: ""
+  },
+  {
+    id: 7,
+    name: "Asian Heart Institute",
+    lat: 19.0658,
+    lon: 72.8654,
+    distance_km: 1115.2,
+    specialties: [{specialty_name: "Cardiology"}, {specialty_name: "Cardiac Surgery"}, {specialty_name: "Heart"}],
+    facilities: [{facility_name: "Cardiac ICU"}, {facility_name: "Advanced Cath Lab"}],
+    rating: 4.8,
+    isVerified: true,
+    best_for: "Heart Disease, Cardiac Bypass Surgery, and Heart Transplants",
+    costs: [{currency: "INR", cost_min: 200000, cost_max: 600000, treatment: "Cardiac Surgery"}],
+    patient_stats: [{volume: 35000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/en/d/d9/AsianHeartInstitute.jpg",
+    contact: {
+      phone: "+91-22-66986666",
+      website: "asianheartinstitute.org"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-AHI-0199"
+  },
+  {
+    id: 8,
+    name: "Medanta - The Medicity",
+    lat: 28.4357,
+    lon: 77.0396,
+    distance_km: 260.1,
+    specialties: [{specialty_name: "Cardiology"}, {specialty_name: "Nephrology"}, {specialty_name: "Kidney"}, {specialty_name: "Heart"}, {specialty_name: "Multi-specialty"}],
+    facilities: [{facility_name: "Multi-organ Transplant Center"}, {facility_name: "Robotic Surgery"}, {facility_name: "Dialysis Unit"}],
+    rating: 4.7,
+    isVerified: true,
+    best_for: "Kidney Transplants, Heart Disease, and Complex Surgeries",
+    costs: [{currency: "INR", cost_min: 150000, cost_max: 900000, treatment: "Transplant & Surgery"}],
+    patient_stats: [{volume: 120000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/RR_Kasliwal_at_Medanta_-_The_Medicity.JPG/800px-RR_Kasliwal_at_Medanta_-_The_Medicity.JPG",
+    contact: {
+      phone: "+91-124-4141414",
+      website: "medanta.org"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-MDN-0888"
+  },
+  {
+    id: 9,
+    name: "Christian Medical College (CMC)",
+    lat: 12.9244,
+    lon: 79.1353,
+    distance_km: 2050.4,
+    specialties: [{specialty_name: "Nephrology"}, {specialty_name: "Urology"}, {specialty_name: "Kidney"}],
+    facilities: [{facility_name: "Advanced Dialysis"}, {facility_name: "ICU"}],
+    rating: 4.9,
+    isVerified: true,
+    best_for: "Kidney Disease, Nephrology, and Rare Disorders",
+    costs: [{currency: "INR", cost_min: 20000, cost_max: 400000, treatment: "Kidney Treatment"}],
+    patient_stats: [{volume: 95000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Christian_Medical_College.jpg/800px-Christian_Medical_College.jpg",
+    contact: {
+      phone: "+91-416-2281000",
+      website: "cmch-vellore.edu"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-CMC-0125"
+  },
+  {
+    id: 10,
+    name: "Sankara Nethralaya",
+    lat: 13.0604,
+    lon: 80.2496,
+    distance_km: 2150.4,
+    specialties: [{specialty_name: "Ophthalmology"}, {specialty_name: "Eye Care"}, {specialty_name: "Cataract"}],
+    facilities: [{facility_name: "Lasik Center"}, {facility_name: "Retina Clinic"}],
+    rating: 4.9,
+    isVerified: true,
+    best_for: "Eye Care, Retina Surgery, Cataract, Vision problems",
+    costs: [{currency: "INR", cost_min: 10000, cost_max: 150000, treatment: "Eye Surgery"}],
+    patient_stats: [{volume: 110000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Sankara_Nethralaya_Chennai.jpg/800px-Sankara_Nethralaya_Chennai.jpg",
+    contact: {
+      phone: "+91-44-42271500",
+      website: "sankaranethralaya.org"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-SN-0099"
+  },
+  {
+    id: 11,
+    name: "NIMHANS",
+    lat: 12.9373,
+    lon: 77.5906,
+    distance_km: 2050.1,
+    specialties: [{specialty_name: "Neurology"}, {specialty_name: "Psychiatry"}, {specialty_name: "Mental Health"}, {specialty_name: "Brain"}],
+    facilities: [{facility_name: "Neuro ICU"}, {facility_name: "Brain Imaging Center"}],
+    rating: 4.8,
+    isVerified: true,
+    best_for: "Mental Health, Brain Disorders, Neurology",
+    costs: [{currency: "INR", cost_min: 2000, cost_max: 100000, treatment: "Neurological Treatment"}],
+    patient_stats: [{volume: 200000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/NIMHANS_Main_Building.jpg/800px-NIMHANS_Main_Building.jpg",
+    contact: {
+      phone: "+91-80-26995000",
+      website: "nimhans.ac.in"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-NIMHANS-0111"
+  },
+  {
+    id: 12,
+    name: "Fortis Escorts Heart Institute",
+    lat: 28.5606,
+    lon: 77.2796,
+    distance_km: 255.4,
+    specialties: [{specialty_name: "Cardiology"}, {specialty_name: "Cardiac Surgery"}, {specialty_name: "Heart"}],
+    facilities: [{facility_name: "Cath Lab"}, {facility_name: "Cardiac ICU"}, {facility_name: "24/7 ER"}],
+    rating: 4.6,
+    isVerified: true,
+    best_for: "Heart Disease, Cardiac Bypass",
+    costs: [{currency: "INR", cost_min: 150000, cost_max: 500000, treatment: "Heart Surgery"}],
+    patient_stats: [{volume: 40000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Fortis_Escorts_Heart_Institute.jpg/800px-Fortis_Escorts_Heart_Institute.jpg",
+    contact: {
+      phone: "+91-11-47135000",
+      website: "fortisescorts.in"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-FEHI-0177"
+  },
+  {
+    id: 13,
+    name: "Rainbow Children's Hospital",
+    lat: 17.4308,
+    lon: 78.4485,
+    distance_km: 1500.2,
+    specialties: [{specialty_name: "Pediatrics"}, {specialty_name: "Neonatology"}, {specialty_name: "Child Care"}],
+    facilities: [{facility_name: "NICU"}, {facility_name: "PICU"}],
+    rating: 4.7,
+    isVerified: true,
+    best_for: "Pediatrics, Neonatal Care, Child Health",
+    costs: [{currency: "INR", cost_min: 10000, cost_max: 200000, treatment: "Pediatric Care"}],
+    patient_stats: [{volume: 60000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hospital_Building.jpg/800px-Hospital_Building.jpg",
+    contact: {
+      phone: "+91-40-44990000",
+      website: "rainbowhospitals.in"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-RCH-0155"
+  },
+  {
+    id: 14,
+    name: "AIG Hospitals",
+    lat: 17.4435,
+    lon: 78.3582,
+    distance_km: 1520.1,
+    specialties: [{specialty_name: "Gastroenterology"}, {specialty_name: "Hepatology"}, {specialty_name: "Stomach"}, {specialty_name: "Liver"}],
+    facilities: [{facility_name: "Endoscopy Suite"}, {facility_name: "ICU"}],
+    rating: 4.8,
+    isVerified: true,
+    best_for: "Stomach, Liver, and Digestive System Disorders",
+    costs: [{currency: "INR", cost_min: 50000, cost_max: 400000, treatment: "Gastro Surgery"}],
+    patient_stats: [{volume: 80000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/AIG_Hospitals_Gachibowli_Hyderabad.jpg/800px-AIG_Hospitals_Gachibowli_Hyderabad.jpg",
+    contact: {
+      phone: "+91-40-42444222",
+      website: "aighospitals.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-AIG-0322"
+  },
+  {
+    id: 15,
+    name: "Rajiv Gandhi Cancer Institute",
+    lat: 28.7265,
+    lon: 77.1086,
+    distance_km: 260.4,
+    specialties: [{specialty_name: "Oncology"}, {specialty_name: "Cancer Surgery"}, {specialty_name: "Cancer"}],
+    facilities: [{facility_name: "Radiation Therapy Unit"}, {facility_name: "Surgical Oncology"}],
+    rating: 4.7,
+    isVerified: true,
+    best_for: "Cancer Diagnosis and Treatment",
+    costs: [{currency: "INR", cost_min: 40000, cost_max: 600000, treatment: "Chemotherapy"}],
+    patient_stats: [{volume: 65000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Rajiv_Gandhi_Cancer_Institute_and_Research_Centre.jpg/800px-Rajiv_Gandhi_Cancer_Institute_and_Research_Centre.jpg",
+    contact: {
+      phone: "+91-11-47022222",
+      website: "rgcirc.org"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-RGC-0144"
+  },
+  {
+    id: 16,
+    name: "Kokilaben Dhirubhai Ambani Hospital",
+    lat: 19.1314,
+    lon: 72.8251,
+    distance_km: 1125.6,
+    specialties: [{specialty_name: "Multi-specialty"}, {specialty_name: "Neurology"}, {specialty_name: "Orthopedics"}, {specialty_name: "Pediatrics"}],
+    facilities: [{facility_name: "Robotic Surgery"}, {facility_name: "Sports Medicine"}],
+    rating: 4.6,
+    isVerified: true,
+    best_for: "Multi-specialty care, Joint Replacements, Stroke",
+    costs: [{currency: "INR", cost_min: 100000, cost_max: 500000, treatment: "Surgery"}],
+    patient_stats: [{volume: 85000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kokilaben_Dhirubhai_Ambani_Hospital.jpg/800px-Kokilaben_Dhirubhai_Ambani_Hospital.jpg",
+    contact: {
+      phone: "+91-22-30999999",
+      website: "kokilabenhospital.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-KDAH-0219"
+  },
+  {
+    id: 17,
+    name: "Lilavati Hospital",
+    lat: 19.0505,
+    lon: 72.8286,
+    distance_km: 1122.3,
+    specialties: [{specialty_name: "Maternity"}, {specialty_name: "Gynecology"}, {specialty_name: "Pregnancy"}],
+    facilities: [{facility_name: "Maternity Ward"}, {facility_name: "NICU"}],
+    rating: 4.5,
+    isVerified: true,
+    best_for: "Pregnancy, Maternity, and Gynecology",
+    costs: [{currency: "INR", cost_min: 80000, cost_max: 250000, treatment: "Maternity Care"}],
+    patient_stats: [{volume: 30000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Lilavati_Hospital_Bandra.jpg/800px-Lilavati_Hospital_Bandra.jpg",
+    contact: {
+      phone: "+91-22-26751000",
+      website: "lilavatihospital.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-LH-0238"
+  },
+  {
+    id: 18,
+    name: "Sir Ganga Ram Hospital",
+    lat: 28.6385,
+    lon: 77.1895,
+    distance_km: 252.1,
+    specialties: [{specialty_name: "General Surgery"}, {specialty_name: "Internal Medicine"}, {specialty_name: "Multi-specialty"}],
+    facilities: [{facility_name: "ICU"}, {facility_name: "Blood Bank"}],
+    rating: 4.7,
+    isVerified: true,
+    best_for: "General Surgery, Medicine, and Critical Care",
+    costs: [{currency: "INR", cost_min: 50000, cost_max: 400000, treatment: "General Surgery"}],
+    patient_stats: [{volume: 90000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Sir_Ganga_Ram_Hospital%2C_New_Delhi.jpg/800px-Sir_Ganga_Ram_Hospital%2C_New_Delhi.jpg",
+    contact: {
+      phone: "+91-11-42254000",
+      website: "sgrh.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-SGRH-0089"
+  },
+  {
+    id: 19,
+    name: "Narayana Hrudayalaya",
+    lat: 12.8130,
+    lon: 77.6835,
+    distance_km: 2060.7,
+    specialties: [{specialty_name: "Cardiology"}, {specialty_name: "Cardiac Surgery"}, {specialty_name: "Heart"}],
+    facilities: [{facility_name: "Cardiac ICU"}, {facility_name: "ECMO"}],
+    rating: 4.8,
+    isVerified: true,
+    best_for: "Heart Transplants, Cardiac Surgery, Heart Disease",
+    costs: [{currency: "INR", cost_min: 150000, cost_max: 600000, treatment: "Cardiac Care"}],
+    patient_stats: [{volume: 110000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Narayana_Hrudayalaya_Hospital.jpg/800px-Narayana_Hrudayalaya_Hospital.jpg",
+    contact: {
+      phone: "+91-80-71222222",
+      website: "narayanahealth.org"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-NH-0432"
+  },
+  {
+    id: 20,
+    name: "Manipal Hospital",
+    lat: 12.9592,
+    lon: 77.6493,
+    distance_km: 2055.2,
+    specialties: [{specialty_name: "Orthopedics"}, {specialty_name: "Bone"}, {specialty_name: "Spine Surgery"}],
+    facilities: [{facility_name: "Robotic Joint Replacement"}, {facility_name: "Sports Medicine Center"}],
+    rating: 4.6,
+    isVerified: true,
+    best_for: "Bone, Spine Surgery, and Orthopedics",
+    costs: [{currency: "INR", cost_min: 120000, cost_max: 350000, treatment: "Joint Replacement"}],
+    patient_stats: [{volume: 55000, period: "2024"}],
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Manipal_Hospital_Bangalore.jpg/800px-Manipal_Hospital_Bangalore.jpg",
+    contact: {
+      phone: "+91-80-25024444",
+      website: "manipalhospitals.com"
+    },
+    nabh_accredited: true,
+    nabh_cert_no: "NABH-MH-0251"
+  }
+];

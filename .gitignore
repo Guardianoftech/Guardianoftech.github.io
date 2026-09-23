@@ -5,3 +5,5 @@ env/
 .env
 .pytest_cache/
 alembic.ini
+node_modules
+dist/

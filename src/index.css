@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-slate-50 font-sans antialiased;
+    background-color: #0f172a;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+  
+  .glass-card {
+    @apply bg-dark-surface/90 backdrop-blur-sm border border-dark-border shadow-soft rounded-2xl transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar for Dark Mode (Terminal Style) */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* slate-900 */
+  border-left: 1px solid #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #334155; /* slate-700 */
+  border: 3px solid #0f172a;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #475569; /* slate-600 */
+}
+
+/* Scrollbar Buttons (Arrows) */
+::-webkit-scrollbar-button:single-button {
+  background-color: #1e293b; /* slate-800 */
+  display: block;
+  height: 14px;
+  width: 14px;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+  background-color: #334155; /* slate-700 */
+}
+
+/* Up Arrow */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2394a3b8" viewBox="0 0 16 16"><path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/></svg>');
+  background-size: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Down Arrow */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2394a3b8" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+  background-size: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Left Arrow */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2394a3b8" viewBox="0 0 16 16"><path d="M4.86 8.753l5.481 4.796c.647.566 1.659.106 1.659-.753V3.204a1 1 0 0 0-1.659-.753L4.86 7.247a1 1 0 0 0 0 1.506z"/></svg>');
+  background-size: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Right Arrow */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2394a3b8" viewBox="0 0 16 16"><path d="M11.14 7.247L5.658 2.451C5.013 1.885 4 2.345 4 3.204v9.592a1 1 0 0 0 1.659.753l5.48-4.796a1 1 0 0 0 0-1.506z"/></svg>');
+  background-size: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
