@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = import.meta.env.VITE_API_URL || '/api/v1';
 import { demoHospitals } from '../mocks/demoHospitals';
 
 const getAuthHeaders = () => {
@@ -73,7 +73,7 @@ export const fetchHospitals = async (lat: number, lon: number, radius = 50000, t
     if (type) params.append('type', type);
     if (rating) params.append('rating', rating);
 
-    const res = await fetchWithTimeout(`${API_URL}/api/v1/hospitals/nearby?${params.toString()}`, {
+    const res = await fetchWithTimeout(`${API_URL}/hospitals/nearby?${params.toString()}`, {
       headers: getAuthHeaders()
     });
 
@@ -97,7 +97,7 @@ export const fetchIntelligentSearch = async (query: string, lat?: number, lon?: 
       params.append('lat', lat.toString());
       params.append('lon', lon.toString());
     }
-    const res = await fetchWithTimeout(`${API_URL}/api/v1/hospitals/intelligent-search?${params.toString()}`, {
+    const res = await fetchWithTimeout(`${API_URL}/hospitals/intelligent-search?${params.toString()}`, {
       headers: getAuthHeaders()
     });
 
@@ -150,7 +150,7 @@ export const fetchHospitalById = async (id: string | number, lat?: number, lon?:
       params.append('lat', lat.toString());
       params.append('lon', lon.toString());
     }
-    const res = await fetchWithTimeout(`${API_URL}/api/v1/hospitals/${id}?${params.toString()}`, {
+    const res = await fetchWithTimeout(`${API_URL}/hospitals/${id}?${params.toString()}`, {
       headers: getAuthHeaders()
     });
     if (!res.ok) throw new Error('Network response was not ok');
@@ -169,7 +169,7 @@ export const geocodeArea = async (query: string): Promise<{ lat: number; lon: nu
   if (!query.trim()) return null;
   try {
     const res = await fetchWithTimeout(
-      `${API_URL}/api/v1/hospitals/geocode?q=${encodeURIComponent(query.trim())}`,
+      `${API_URL}/hospitals/geocode?q=${encodeURIComponent(query.trim())}`,
       { headers: getAuthHeaders() }
     );
     if (!res.ok) return null;
