@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { PageContainer } from './components/layout/PageContainer';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
-import { Login } from './pages/Login';
-import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Hospitals } from './pages/Hospitals';
 import { HospitalDetails } from './pages/HospitalDetails';
@@ -24,9 +22,6 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          
           <Route path="/" element={
             <ProtectedRoute>
               <PageContainer>

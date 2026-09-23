@@ -168,7 +168,7 @@ export const Header = () => {
               My Profile
             </button>
             <button 
-              onClick={() => { logout(); navigate('/login'); }}
+              onClick={() => { logout(); navigate('/'); }}
               className="w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-white/5 flex items-center gap-2 transition-colors"
             >
               <LogOut className="h-4 w-4" />

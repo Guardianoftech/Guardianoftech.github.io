@@ -18,8 +18,26 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+  const [user, setUser] = useState<User | null>(() => {
+    const storedUser = localStorage.getItem('mediconnect_currentUser');
+    if (storedUser) {
+      try {
+        return JSON.parse(storedUser);
+      } catch {
+        localStorage.removeItem('mediconnect_currentUser');
+      }
+    }
+    const demoUser = { id: 1, name: 'Demo User', email: 'demo@example.com' };
+    localStorage.setItem('mediconnect_currentUser', JSON.stringify(demoUser));
+    return demoUser;
+  });
+  const [token, setToken] = useState<string | null>(() => {
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) return storedToken;
+    const demoToken = 'demo_mode_token_default';
+    localStorage.setItem('token', demoToken);
+    return demoToken;
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -56,9 +74,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
-    setToken(null);
-    setUser(null);
+    const demoUser = { id: 1, name: 'Demo User', email: 'demo@example.com' };
+    const demoToken = 'demo_mode_token_default';
+    localStorage.setItem('token', demoToken);
+    localStorage.setItem('mediconnect_currentUser', JSON.stringify(demoUser));
+    setToken(demoToken);
+    setUser(demoUser);
   };
 
   return (
