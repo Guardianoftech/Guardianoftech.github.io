@@ -1,25 +1,35 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import hospitals, chat
+from database import Base, engine
+from models import User  # noqa: F401 - registers the model before create_all
+from routers import auth, health, users
+
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
 app = FastAPI(
-    title="MediConnect Backend API",
-    description="API for the Hospital Management System, featuring Overpass API integration and AI Medical Chatbot.",
+    title="MediSphere Backend API",
+    description="Authentication and database API for MediSphere.",
     version="1.0.0"
 )
 
-# CORS configuration to allow frontend (localhost:5173) to communicate with backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[frontend_url, "http://localhost:5173", "https://guardianoftech.github.io"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include routers
-app.include_router(hospitals.router, prefix="/api/hospitals", tags=["Hospitals"])
-app.include_router(chat.router, prefix="/api/chat", tags=["AI Chatbot"])
+@app.on_event("startup")
+def create_tables() -> None:
+    Base.metadata.create_all(bind=engine)
+
+
+app.include_router(auth.router, prefix="/api/v1", tags=["Authentication"])
+app.include_router(users.router, prefix="/api/v1", tags=["Users"])
+app.include_router(health.router, prefix="/api/v1", tags=["Health"])
 
 @app.get("/")
 async def root():
