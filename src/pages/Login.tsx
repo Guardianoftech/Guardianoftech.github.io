@@ -56,8 +56,8 @@ export const Login = () => {
       login(response.data.access_token);
       navigate('/');
     } catch (err: any) {
-      if (!err.response) {
-        // Network Error or Server Unreachable -> Fallback to Demo Mode
+      if (!err.response || [404, 405, 502, 503, 504].includes(err.response.status)) {
+        // Missing or unavailable backend -> Fallback to Demo Mode
         handleDemoModeFallback();
         return;
       }

@@ -86,8 +86,8 @@ export const Register = () => {
     } catch (err: any) {
       console.error("Registration Error: ", err.response?.data || err.message);
       
-      if (!err.response) {
-        // Network Error or Server Unreachable -> Fallback to Demo Mode
+      if (!err.response || [404, 405, 502, 503, 504].includes(err.response.status)) {
+        // Missing or unavailable backend -> Fallback to Demo Mode
         handleDemoModeFallback();
         return;
       }
